@@ -1,5 +1,5 @@
 {
-  "name": "expo-iap",
+  "name": "@domore-hr/expo-iap",
   "version": "2.1.0",
   "description": "In App Purchase module in Expo",
   "main": "build/index.js",

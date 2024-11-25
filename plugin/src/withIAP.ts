@@ -1,8 +1,5 @@
-import {
-  WarningAggregator,
-  withProjectBuildGradle,
-} from 'expo/config-plugins';
-import {ConfigPlugin, createRunOncePlugin} from 'expo/config-plugins';
+import {WarningAggregator, withProjectBuildGradle} from '@expo/config-plugins';
+import {ConfigPlugin, createRunOncePlugin} from '@expo/config-plugins';
 
 const pkg = require('../../package.json');
 
