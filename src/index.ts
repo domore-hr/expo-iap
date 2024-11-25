@@ -1,6 +1,6 @@
 // Import the native module. On web, it will be resolved to ExpoIap.web.ts
 // and on native platforms to ExpoIap.ts
-import {NativeModulesProxy, EventEmitter, Platform} from 'expo-modules-core';
+import {EventEmitter, Platform} from 'expo-modules-core';
 
 import {
   Product,
@@ -44,9 +44,7 @@ export async function setValueAsync(value: string) {
   return await ExpoIapModule.setValueAsync(value);
 }
 
-export const emitter = new EventEmitter(
-  ExpoIapModule ?? NativeModulesProxy.ExpoIap,
-);
+export const emitter = new EventEmitter(ExpoIapModule);
 
 export const purchaseUpdatedListener = (
   listener: (event: Purchase) => void,
