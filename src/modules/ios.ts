@@ -1,4 +1,3 @@
-import {Platform} from 'react-native';
 import {emitter, IapEvent} from '..';
 import {Product, PurchaseError, SubscriptionProduct} from '../ExpoIap.types';
 import type {
@@ -8,6 +7,7 @@ import type {
   TransactionSk2,
 } from '../types/ExpoIapIos.types';
 import ExpoIapModule from '../ExpoIapModule';
+import {Platform} from 'expo-modules-core';
 
 export type TransactionEvent = {
   transaction?: TransactionSk2;

@@ -1,7 +1,6 @@
 // Import the native module. On web, it will be resolved to ExpoIap.web.ts
 // and on native platforms to ExpoIap.ts
-import {NativeModulesProxy, EventEmitter} from 'expo-modules-core';
-import {Platform} from 'react-native';
+import {NativeModulesProxy, EventEmitter, Platform} from 'expo-modules-core';
 
 import {
   Product,
