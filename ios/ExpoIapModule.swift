@@ -15,7 +15,6 @@ struct IapEvent {
     static let TransactionIapUpdated = "iap-transaction-updated"
 }
 
-@available(iOS 15.0, *)
 func serializeProduct(_ p: Product) -> [String: Any?] {
     return [
         "debugDescription": serializeDebug(p.debugDescription),
@@ -32,7 +31,6 @@ func serializeProduct(_ p: Product) -> [String: Any?] {
     ]
 }
 
-@available(iOS 15.0, *)
 func serializeTransaction(_ transaction: Transaction) -> [String: Any?] {
     return [
         "id": transaction.id,
@@ -43,7 +41,6 @@ func serializeTransaction(_ transaction: Transaction) -> [String: Any?] {
     ]
 }
 
-@available(iOS 15.0, *)
 func serializeSubscriptionStatus(_ status: Product.SubscriptionInfo.Status) -> [String: Any?] {
     return [
         "state": status.state.rawValue,
@@ -51,7 +48,6 @@ func serializeSubscriptionStatus(_ status: Product.SubscriptionInfo.Status) -> [
     ]
 }
 
-@available(iOS 15.0, *)
 func serializeRenewalInfo(_ renewalInfo: VerificationResult<Product.SubscriptionInfo.RenewalInfo>) -> [String: Any?]? {
     switch renewalInfo {
     case .unverified:
@@ -70,12 +66,10 @@ func serializeRenewalInfo(_ renewalInfo: VerificationResult<Product.Subscription
     }
 }
 
-@available(iOS 15.0, *)
 func serialize(_ transaction: Transaction, _ result: VerificationResult<Transaction>) -> [String: Any?] {
     return serializeTransaction(transaction)
 }
 
-@available(iOS 15.0, *)
 @Sendable func serialize(_ rs: Transaction.RefundRequestStatus?) -> String? {
     guard let rs = rs else { return nil }
     switch rs {
@@ -86,7 +80,6 @@ func serialize(_ transaction: Transaction, _ result: VerificationResult<Transact
     }
 }
 
-@available(iOS 15.0, *)
 public class ExpoIapModule: Module {
     private var transactions: [String: Transaction] = [:]
     private var productStore: ProductStore?

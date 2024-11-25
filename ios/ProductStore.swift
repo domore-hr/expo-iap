@@ -1,7 +1,6 @@
 import Foundation
 import StoreKit
 
-@available(iOS 15.0, *)
 actor ProductStore {
   private(set) var products: [String: Product] = [:]
 
